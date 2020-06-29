@@ -11,6 +11,7 @@ public class IceCreamCar implements IceCreamSeller{
     public IceCreamCar(PriceList pricelist, Stock stock) {
         this.pricelist = pricelist;
         this.stock = stock;
+        this.profit = 0;
     }
 
     /*private Cone prepareCone(Flavor[] ballsflvrs){
@@ -51,11 +52,9 @@ public class IceCreamCar implements IceCreamSeller{
     public Magnum orderMagnum(MagnumType seltype) throws NoMoreIceCreamException {
         Magnum magnx = new Magnum(seltype);
         if (this.stock.getMagni() > 1) {
-            this.profit = this.profit + this.pricelist.getRocketPrice();
+            this.profit = this.profit + this.pricelist.getMagnumPrice(seltype);
             this.stock.setMagni(this.stock.getMagni()-1);
         } else throw new NoMoreIceCreamException("Geen magni meer !");
-
-        this.profit = this.profit + this.pricelist.getMagnumPrice(seltype);
 
         return magnx;
     }

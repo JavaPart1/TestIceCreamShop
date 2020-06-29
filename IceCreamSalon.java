@@ -7,7 +7,9 @@ public class IceCreamSalon implements IceCreamSeller{
     private double totalProfit;
 
     public IceCreamSalon(PriceList pricelist) {
+
         this.pricelist = pricelist;
+        this.totalProfit = 0;
     }
 
     public Cone orderCone(Flavor[] ballsflvrs){
