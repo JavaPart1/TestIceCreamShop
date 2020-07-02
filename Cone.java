@@ -12,6 +12,6 @@ public class Cone implements Eatable{
 
     @Override
     public void eat() {
-
+        // Geen implementaties voor al de eat() methodes?...
     }
 }
